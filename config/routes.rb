@@ -34,7 +34,9 @@ Rails.application.routes.draw do
 
   resources:addresses,except: [:new, :show]
 
+  namespace :admin do
   resources:genres,only: [:index, :create, :edit, :update]
+  end
 
   resources:order_items,only: [:update]
 
