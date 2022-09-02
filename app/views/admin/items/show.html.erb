@@ -1,0 +1,11 @@
+ここはitem詳細画面やで
+<h1>商品詳細</h1>
+<%= image_tag @item.image,:size =>'400x400' %>
+<%= @item.name %>
+<%= @item.introduction %>
+<%= @item.genre.name %>
+税抜価格<%= @item.price %>円
+(税込価格)<%= @item.add_tax_price.to_s(:dalimited) %>円
+<%= @item.is_active ? '販売中':'販売停止中' %>
+
+<%= link_to '編集する',edit_admin_item_path %>

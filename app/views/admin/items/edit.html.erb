@@ -1,1 +1,32 @@
-ここはitem詳細画面やで
+商品編集画面だよ
+
+<h1>商品編集画面</h1>
+
+<%= form_with model: @item ,url: admin_item_path, method: :patch do |f| %>
+
+<h4>商品画像</h4>
+  <%= f.file_field :image, accept: "image/*" %>
+<h4>商品名</h4>
+  <%= f.text_field :name %>
+<h4>商品説明</h4>
+  <%= f.text_area :introduction %>
+<h4>ジャンル</h4>
+  <%= f.collection_select(:genre_id,Genre.all,:id,:name) %>
+<h4>税抜価格</h4>
+  <%= f.text_field :price %>円
+
+
+<div class="is_active">
+  <%= f.label :販売ステータス %>
+  <div>
+  <%= f.label :is_active,'販売中',value: true %>
+  <%= f.radio_button :is_active , true %>
+  </div>
+  <div>
+    <%= f.label :is_active,'販売停止中',value: false %>
+    <%= f.radio_button :is_active,false %>
+  </div>
+</div>
+
+  <%= f.submit '変更を保存' %>
+<% end %>
