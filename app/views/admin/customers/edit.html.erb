@@ -1,0 +1,36 @@
+ここは会員情報編集する画面だあよ
+<%= form_with model: @customer ,url: admin_customer_path, method:patch do |f| %>
+氏名
+<%= f.text_field :last_name %>
+<%= f.text_field :first_name %>
+
+フリガナ
+<%= f.text_field :last_name_kana %>
+<%= f.text_field :first_name_kana %>
+
+郵便番号
+<%= f.text_field :postal_code %>
+
+住所
+<%= f.text_area :address %>
+
+電話番号
+<%= f.text_area :telephone_number %>
+
+メールアドレス
+<%= f.text_field :email %>
+
+<div class="is_active">
+  <%= f.label :会員ステータス %>
+  <div>
+  <%= f.label :is_active,'有効',value: true %>
+  <%= f.radio_button :is_active , true %>
+  </div>
+  <div>
+    <%= f.label :is_active,'退会',value: false %>
+    <%= f.radio_button :is_active,false %>
+  </div>
+</div>
+
+  <%= f.submit '変更を保存' %>
+<% end %>

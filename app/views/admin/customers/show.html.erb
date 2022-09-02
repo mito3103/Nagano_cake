@@ -1,0 +1,20 @@
+ここは会員詳細よん
+<%= @customer.first_name %><%= @customer.last_name %>さんの会員詳細
+
+会員ID
+<%= @customer.id %>
+氏名
+<%= @customer.first_name %><%= @customer.last_name %>
+フリガナ
+<%= @customer.first_name_kana %><%= @customer.last_name_kana %>
+郵便番号
+<%= @customer.postal_code %>
+住所
+<%= @customer.address %>
+電話番号
+<%= @customer.telephone_number %>
+メールアドレス
+<%= @customer.email %>
+
+<%= link_to '編集する',edit_admin_customer_path %>
+<%= link_to '注文履歴一覧を見る',admin_order_path(@customer.id) %>

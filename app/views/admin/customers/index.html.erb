@@ -3,4 +3,8 @@
 <h1>会員一覧</h1>
 
 <%= @customers.each do |f| %>
-<%= %>
+<%= f.id %>
+<%= f.last.name %><%= f.first.name %>
+<%= f.email %>
+<%= f.is_active ? '有効':'退会' %>
+
