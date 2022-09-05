@@ -3,13 +3,15 @@
 <%= @orders.each do |f|%>
 
 購入日時
-<%= f.%>
+<%= f.created_at %>
 購入者
 <%= f.customer.name %>
 
 注文個数
+<%= f.order_items.ammount %>
 
 注文ステータス
+<%= f.payment_method_i18n %>
 
 
 
